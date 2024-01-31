@@ -30,21 +30,35 @@ function swiperAnimation() {
         spaceBetween: 100
     });
 }
+
+function menuAnimation() {
+    let full = document.querySelector("#full-scr")
+    let menu = document.querySelector("nav h3")
+    let navimg = document.querySelector("nav img")
+    let flag = 0
+    menu.addEventListener("click", () => {
+        if (flag == 0) {
+            full.style.top = 0
+            navimg.style.opacity = 0
+            flag = 1
+        } else {
+            full.style.top = "-100%"
+            navimg.style.opacity = 1
+            flag = 0
+        }
+    })
+}
+
+function loaderAnimation() {
+    let loader = document.querySelector("#loader")
+    setTimeout(() => {
+        loader.style.top = "-100%"
+    }, 4000)
+}
+
+loaderAnimation()    
 swiperAnimation()
 page3Animation()
+// menuAnimation()
 
-let full = document.querySelector("#full-scr")
-let menu = document.querySelector("nav h3")
-let navimg = document.querySelector("nav img")
-let flag = 0
-menu.addEventListener("click", () => {
-    if (flag == 0) {
-        full.style.top = 0
-        navimg.style.opacity = 0
-        flag = 1
-    }else{
-        full.style.top = "-100%"
-        navimg.style.opacity = 1
-        flag = 0
-    }
-})
+
